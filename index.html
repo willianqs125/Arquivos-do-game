@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jogo de Futebol 1x1 - Aprimorado</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="character-select" id="characterSelect">
+        <h1>⚽ Escolha os Jogadores ⚽</h1>
+        <div class="character-selection">
+            <div class="player-section">
+                <h2>🎮 Seu Jogador</h2>
+                <div class="characters-grid" id="playerCharacters"></div>
+                <div class="character-name" id="playerCharacterName">Selecione um personagem</div>
+            </div>
+            <div class="player-section">
+                <h2>🤖 Adversário</h2>
+                <div class="characters-grid" id="aiCharacters"></div>
+                <div class="character-name" id="aiCharacterName">Selecione um adversário</div>
+            </div>
+        </div>
+        <button class="start-game-btn" id="startGameBtn" disabled>🚀 Começar Partida</button>
+    </div>
+
+    <div class="game-container hidden" id="gameContainer">
+        <div class="score">
+            <div class="player-score">
+                <div class="player-indicator" id="playerIndicator"></div>
+                <span>Você: <span id="playerScore">0</span></span>
+            </div>
+            <div class="player-score">
+                <span>IA: <span id="aiScore">0</span></span>
+                <div class="player-indicator" id="aiIndicator"></div>
+            </div>
+        </div>
+        <div class="timer">⏱️ Tempo: <span id="timer">90</span>s</div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="controls">
+            <p>🎯 Use as setas ou WASD para mover • ESPAÇO para chutar</p>
+        </div>
+        <div class="stats">
+            <span>Chutes: <span id="playerShots">0</span></span>
+            <span>Posses: <span id="ballPossessions">0</span></span>
+            <span>Velocidade da Bola: <span id="ballSpeed">0</span></span>
+        </div>
+    </div>
+
+    <div class="game-over hidden" id="gameOver">
+        <div class="winner" id="winner"></div>
+        <p>Placar Final: <span id="finalPlayerScore">0</span> x <span id="finalAiScore">0</span></p>
+        <div style="margin: 20px 0; font-size: 16px;">
+            <p>🎯 Chutes totais: <span id="finalPlayerShots">0</span></p>
+            <p>⚽ Posses de bola: <span id="finalBallPossessions">0</span></p>
+        </div>
+        <button class="restart-btn" id="restartBtn">🔄 Jogar Novamente</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
